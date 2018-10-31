@@ -14,7 +14,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.rootContainer}>hello from react</div>
+      <div className={styles.rootContainer}>
+        <span className={styles.title}>Harper Grey</span>
+        <span className={styles.subTitle}>Lifestyles</span>
+
+      </div>
     );
   }
 }
