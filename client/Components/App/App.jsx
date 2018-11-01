@@ -19,6 +19,7 @@ class App extends Component {
         <div className={styles.gradient}>
           <div className={styles.rootContainer}>
             <span className={styles.title}>Harper Grey</span>
+            <br />
             <span className={styles.subTitle}>Lifestyles</span>
             <Landing />
           </div>

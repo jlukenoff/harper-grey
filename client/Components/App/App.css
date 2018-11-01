@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Lobster');
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive|Prata|Raleway+Dots|Sacramento');
+
 
 .background {
   background-image: url(https://images.unsplash.com/photo-1509392949348-24e77e5e902d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=397da56000441e02b4cde660a10e764f&auto=format&fit=crop&w=1500&q=80);
@@ -14,7 +15,7 @@
 }
 
 .gradient {
-  background-color: rgba(255, 255, 255, 0.150);
+  background-color: rgba(0, 0, 0, 0.150);
   position: absolute;
   top: 0;
   left: 0;
@@ -24,19 +25,22 @@
 
 .rootContainer {
   margin: 0 15%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway Dots', 'Prata', sans-serif;
   text-align: center;
   display: block;
 }
 
 .title {
-  font-size: 10vw;
-  font-family: 'Lobster';
-  font-weight: 400;
+  font-size: 12vw;
+  font-family: 'Sacramento', 'Lobster';
+  font-weight: thin;
+  color: white;
+  letter-spacing: 2px;
   display: inline-block;
 }
 
 .subTitle {
   font-size: 6vw;
   display: inline-block;
+  color: white;
 }
