@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Info from '../Info/Info';
+import Landing from '../Landing/Landing';
 
 // import PropTypes from 'prop-types';
 
@@ -20,7 +20,7 @@ class App extends Component {
           <div className={styles.rootContainer}>
             <span className={styles.title}>Harper Grey</span>
             <span className={styles.subTitle}>Lifestyles</span>
-            <Info />
+            <Landing />
           </div>
         </div>
       </div>

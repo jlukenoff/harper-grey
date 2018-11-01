@@ -1,0 +1,51 @@
+.landingContainer {
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  padding-top: 5%;
+}
+
+.landingHeader {
+  display: inline-block;
+  border: 1px dashed black;
+  height: 20vh;
+  width: 90%;
+  font-size: 6em;
+}
+
+.contentEntryContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  padding: 0 2%;
+}
+
+.blockImage {
+  width: 100%;
+  height: auto;
+}
+
+.image {
+  display: block;
+  max-width: 50%;
+  max-height: 110vh;
+  width: auto;
+  height: auto;
+  box-shadow: 0px 2px 10px black;
+}
+
+.textLeft {
+  font-size: 2vw;
+  text-align: left;
+  max-width: 30vw;
+}
+
+.textRight {
+  font-size: 2vw;
+  text-align: right;
+  max-width: 30vw;
+}
