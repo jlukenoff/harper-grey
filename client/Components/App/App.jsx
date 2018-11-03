@@ -20,7 +20,7 @@ class App extends Component {
           <div className={styles.rootContainer}>
             <span className={styles.title}>Harper Grey</span>
             <br />
-            <span className={styles.subTitle}>Lifestyles</span>
+            <span className={styles.subTitle}>Lifestyle</span>
             <Landing />
           </div>
         </div>

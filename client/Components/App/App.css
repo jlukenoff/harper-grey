@@ -25,7 +25,7 @@
 
 .rootContainer {
   margin: 0 15%;
-  font-family: 'Raleway Dots', 'Prata', sans-serif;
+  font-family: 'Prata', sans-serif;
   text-align: center;
   display: block;
 }
@@ -41,6 +41,7 @@
 
 .subTitle {
   font-size: 6vw;
+  font-family: 'Raleway Dots', sans-serif;
   display: inline-block;
   color: white;
 }
