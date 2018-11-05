@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import styles from './Nav.css';
 
 const Nav = props => (
-  <div>Nav Here</div>
+  <div>Testing Nav</div>
 );
 
 // Nav.propTypes = {
