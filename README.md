@@ -1,6 +1,6 @@
-# MERN boilerplate
+# Harper Grey Lifestyle
 
-> Custom boilerplate template for MERN stack web apps.
+> Main page for Harper Grey Lifestyle
 
 ## Related Projects
 
