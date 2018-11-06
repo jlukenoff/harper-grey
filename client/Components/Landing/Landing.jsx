@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from '../Nav/Nav';
 // import PropTypes from 'prop-types';
 
 import styles from './Landing.css';
@@ -39,7 +40,7 @@ Available to All
  */
 const Landing = ({ content = exampleContent }) => (
   <div className={styles.landingContainer}>
-    <div className={styles.landingHeader}>Landing Header Here</div>
+    <Nav />
     {content.map(({ imageUrl, title, text }, index) => (index % 2 === 0
       ? (
         <div className={styles.contentEntryContainer} key={title}>
