@@ -5,12 +5,6 @@ node_js:
 cache:
   directories:
   - node_modules
-deploy:
-  provider: heroku
-  api_key:
-    secure: dQ96uchvVQlfjAVbTclPAsyo3cElQTwOE5QNjm39TD6MpUaUTNHzokdVb+sNmiKgWaQOS+eBwLRqYuGDY0csSMTotrTbR2DfyoYv5A0DkKrTZ/23JsBUgK6iTiDtNhkFf41HK+h2AS3rZdLuNMuT9DPrNdZARSmmA6w62OvDUbiFXz8FShdOcLWg8biQwKwgrdSi0R5eRhQs2NlpqOGMJwWF4y74v9Qf7/K0pBY8kGooB+PReP4WugEnqAKXCun6pBEUNr2zeDofteCsvHwbDfyWsl10ALAYwhowP3o1NyCsTDMGNCFRhbWGVIyNWyyPTlQ1VJLROcNeiOURLl72SL0V75paiX5RHyiXnrliKLYgYC8OAXZ1fJI6yGp3H0j6EfnSJ7fYKty3N89I+qrC0vsQyOC2fn9YYeLDBgZzK1YZkWtpPuYKqsykJ3qqNOVJWxJPTpda6hIE4cLyca4/yW5KIYMHXhHMa3KsQa/X1wwaVq0aIMB8poRjb/zVuMhwXiDI4ZDif6TgldTe/pcFgNCBOJwPisTc1lI2I316yRgq07GoA9P55dqM3m7LO9/iSIjF23JfnON4hyoDxKt1/z/G9AfdYuJ3Ffl4EzXnIutM7ZtojQ9cQGcfIejCeIc63uDlvEehQkThIoOjWyrXOv4uqMSdhsmIFb+6FVNVV/g=
-  on: dist
-  app: gruesome-goblin-44382
 before_install:
 - npm i -g npm@6.2.0
 install:
