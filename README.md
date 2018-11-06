@@ -1,4 +1,4 @@
-# Harper Grey Lifestyle
+# Harper Grey Lifestyle [![Build Status](https://www.travis-ci.com/jlukenoff/harper-grey.svg?branch=master)](https://www.travis-ci.com/jlukenoff/harper-grey)
 
 > Main page for Harper Grey Lifestyle
 
