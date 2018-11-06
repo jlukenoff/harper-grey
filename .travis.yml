@@ -7,10 +7,10 @@ cache:
   - node_modules
 deploy:
   provider: heroku
-  api_key: HEROKU_API_KEY
+  api_key:
+    secure: MHOEbjWjntzIz6Ul9o4YO+L/Sg/8h+Nz2HCuIMlKzzOGOT5hnCQonvSx8hrPTGzYZP5phhEyitU7M3kMJ/jCiqUVDZyVuCCMMJvJZK6Pa58+WIDYvyZ3qbDpM0/+u1AhRNcRgDaw0sLG6yU8I2owNCwQ3Nv0jjpZpoLEdJwF42jGpwMEQjKtcOBX+uKotito2oWeuGtYOtf4wvXxjkkz7kPwS5BMt8DKg1+n9OFlGnYi6a5hekktiM2kFxoUdPmFPP52g4z9W9s3IkCS0fY8l0xUB65d1razaD6jRRjgjTMPaVCQZ+lP74Jr0s+sujkl6wy3JN/zbegOgEH/qqIP4xzX8r1UQvZfiLk6Tw4vchfn8CjO1UVpLnTEYFuLLSPU+s9nv80lrrhdqiqCE/IqiBkYUYm1FSDJ2ufVuhaWIU70MK8ZsPdLFcXLBWVKWzHk1YtX2MfWz+1U3VeXaTdnWsyyS/OSV4prYmPrHITrwFaouzrn1dzJNoWAgkwZQ2/hnakg1RELVwpPvBLdcr/6nR9R4VFDMnBaqsl0Dd9L2dKo5to2xEFtMF3BeIeLiL40mgjoZ/akpnOCY5CFRV2YfI5LPTaR11eUGdi/KNXRjwnCBMf8Z1FmU3F6mallbxZ7EDizh1HUtqMxVxnYcAxE7A2dQvXPyIkSe4gbL7CWQmM=
   on: dist
   app: gruesome-goblin-44382
-  run: npm run build
 before_install:
 - npm i -g npm@6.2.0
 install:
