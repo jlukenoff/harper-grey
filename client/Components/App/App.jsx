@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from '../Landing/Landing';
 
 // import PropTypes from 'prop-types';
@@ -21,7 +22,9 @@ class App extends Component {
             <span className={styles.title}>Harper Grey</span>
             <br />
             <span className={styles.subTitle}>Lifestyle</span>
-            <Landing />
+            <Router>
+              <Landing />
+            </Router>
           </div>
         </div>
       </div>
