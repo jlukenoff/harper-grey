@@ -15,15 +15,12 @@ module.exports = {
   resolve: { extensions: ['.js', '.jsx'] },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
     compress: true,
     port: 8080,
   },
   module: {
     rules: [
-      {
-        test: /\.(eot|svg|ttf|woff|otf|woff2)$/,
-        loader: 'file-loader',
-      },
       {
         test: /\.css$/,
         loader: 'style-loader',

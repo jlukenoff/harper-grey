@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Landing from '../Landing/Landing';
 
 // import PropTypes from 'prop-types';
@@ -15,16 +16,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className={styles.background}>
-        <div className={styles.gradient}>
-          <div className={styles.rootContainer}>
-            <span className={styles.title}>Harper Grey</span>
-            <br />
-            <span className={styles.subTitle}>Lifestyle</span>
-            <Landing />
+      <Router>
+        <div className={styles.background}>
+          <div className={styles.gradient}>
+            <div className={styles.rootContainer}>
+              <Link to="/" className={styles.title}>Harper Grey</Link>
+              <br />
+              <span className={styles.subTitle}>Lifestyle</span>
+              <Route component={Landing} />
+            </div>
           </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

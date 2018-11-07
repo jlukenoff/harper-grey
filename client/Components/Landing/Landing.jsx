@@ -1,9 +1,15 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import Shop from '../Shop/Shop';
+import Blog from '../Blog/Blog';
 // import PropTypes from 'prop-types';
 
 import styles from './Landing.css';
 
-const exampleContent = [
+const content = [
   {
     imageUrl: 'https://images.unsplash.com/photo-1509009082772-cb9797f8adbf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d227b77e8a3d66c9b7b58b73439aa4e5&auto=format&fit=crop&w=720&q=80',
     title: 'Clothing Made for Real Life',
@@ -37,33 +43,39 @@ Available to All
 
 
  */
-const Landing = ({ content = exampleContent }) => (
-  <div className={styles.landingContainer}>
-    <div className={styles.landingHeader}>Landing Header Here</div>
-    {content.map(({ imageUrl, title, text }, index) => (index % 2 === 0
-      ? (
-        <div className={styles.contentEntryContainer} key={title}>
-          <img src={imageUrl} alt={title} className={text ? styles.image : styles.blockImage} style={text && { marginRight: '4%' }} />
-          {text && (
-          <div className={styles.textRight}>
-            <span className={styles.contentEntryTitle}>{title}</span>
-            {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
-          </div>
-          )}
-        </div>
-      ) : (
-        <div className={styles.contentEntryContainer} key={title}>
-          {text && (
-          <div className={styles.textLeft}>
-            <span className={styles.contentEntryTitle}>{title}</span>
-            {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
-          </div>
-          )}
-          <img src={imageUrl} alt={title} className={text ? styles.image : styles.blockImage} style={text && { marginLeft: '4%' }} />
-        </div>)
+const LandingEntries = () => content.map(({ imageUrl, title, text }, index) => (index % 2 === 0
+  ? (
+    <div className={styles.contentEntryContainer} key={title}>
+      <img src={imageUrl} alt={title} className={text ? styles.image : styles.blockImage} style={text && { marginRight: '4%' }} />
+      {text && (
+      <div className={styles.textRight}>
+        <span className={styles.contentEntryTitle}>{title}</span>
+        {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
+      </div>
+      )}
+    </div>
+  ) : (
+    <div className={styles.contentEntryContainer} key={title}>
+      {text && (
+      <div className={styles.textLeft}>
+        <span className={styles.contentEntryTitle}>{title}</span>
+        {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
+      </div>
+      )}
+      <img src={imageUrl} alt={title} className={text ? styles.image : styles.blockImage} style={text && { marginLeft: '4%' }} />
+    </div>)
+));
 
-    ))
-    }
+const Landing = ({ match }) => (
+  <div className={styles.landingContainer}>
+    <Nav />
+    <Switch>
+      <Route exact path="/" component={LandingEntries} />
+      <Route path="/about/" component={About} />
+      <Route path="/contact/" component={Contact} />
+      <Route path="/shop/" component={Shop} />
+      <Route path="/blog/" component={Blog} />
+    </Switch>
     <div className={styles.footerContainer}>
       <span className={styles.copyright}>Copyright, Harper Grey Lifestyles Inc. 2018 &copy;</span>
     </div>
