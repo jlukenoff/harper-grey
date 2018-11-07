@@ -68,19 +68,19 @@ class Landing extends Component {
 
   componentDidMount() {
     const { location: { pathname } } = this.props;
-    if (pathname !== '/') this.scrollTop('auto');
+    if (pathname !== '/') this.scrollTop();
   }
 
   componentDidUpdate(prevProps) {
     const { props: { location } } = this;
     if (location.pathname !== prevProps.location.pathname && location.pathname !== '/') {
-      this.scrollTop('smooth');
+      this.scrollTop();
     }
   }
 
-  scrollTop(behavior) {
+  scrollTop() {
     const { current: { offsetTop } } = this.myRef;
-    window.scrollTo({ top: offsetTop, behavior });
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
   }
 
   render() {
