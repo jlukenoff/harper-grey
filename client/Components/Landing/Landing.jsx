@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, createRef } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import About from '../About/About';
@@ -22,6 +22,7 @@ const content = [
   },
   {
     imageUrl: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=98ff2de81c5d7b865b48ddd0ca7827f0&auto=format&fit=crop&w=1050&q=80',
+    title: 'Women Working Out',
   },
   {
     imageUrl: 'https://images.unsplash.com/photo-1523404254487-2852b77fbc5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e298d072891e3afb0d157415ae491308&auto=format&fit=crop&w=635&q=80',
@@ -35,14 +36,6 @@ const content = [
   },
 ];
 
-/**
-
-Content
-
-Available to All
-
-
- */
 const LandingEntries = () => content.map(({ imageUrl, title, text }, index) => (index % 2 === 0
   ? (
     <div className={styles.contentEntryContainer} key={title}>
@@ -50,7 +43,7 @@ const LandingEntries = () => content.map(({ imageUrl, title, text }, index) => (
       {text && (
       <div className={styles.textRight}>
         <span className={styles.contentEntryTitle}>{title}</span>
-        {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
+        {text.split('\n').map(line => (<span className={styles.textContent} key={line}>{line}</span>))}
       </div>
       )}
     </div>
@@ -59,29 +52,55 @@ const LandingEntries = () => content.map(({ imageUrl, title, text }, index) => (
       {text && (
       <div className={styles.textLeft}>
         <span className={styles.contentEntryTitle}>{title}</span>
-        {text.split('\n').map(line => (<span className={styles.textContent}>{line}</span>))}
+        {text.split('\n').map(line => (<span className={styles.textContent} key={line}>{line}</span>))}
       </div>
       )}
       <img src={imageUrl} alt={title} className={text ? styles.image : styles.blockImage} style={text && { marginLeft: '4%' }} />
     </div>)
 ));
 
-const Landing = ({ match }) => (
-  <div className={styles.landingContainer}>
-    <Nav />
-    <Switch>
-      <Route exact path="/" component={LandingEntries} />
-      <Route path="/about/" component={About} />
-      <Route path="/contact/" component={Contact} />
-      <Route path="/shop/" component={Shop} />
-      <Route path="/blog/" component={Blog} />
-    </Switch>
-    <div className={styles.footerContainer}>
-      <span className={styles.copyright}>Copyright, Harper Grey Lifestyles Inc. 2018 &copy;</span>
-    </div>
-  </div>
-);
+class Landing extends Component {
+  constructor(props) {
+    super(props);
+    this.scrollTop = this.scrollTop.bind(this);
+    this.myRef = createRef();
+  }
 
+  componentDidMount() {
+    const { location: { pathname } } = this.props;
+    if (pathname !== '/') this.scrollTop('auto');
+  }
+
+  componentDidUpdate(prevProps) {
+    const { props: { location } } = this;
+    if (location.pathname !== prevProps.location.pathname && location.pathname !== '/') {
+      this.scrollTop('smooth');
+    }
+  }
+
+  scrollTop(behavior) {
+    const { current: { offsetTop } } = this.myRef;
+    window.scrollTo({ top: offsetTop, behavior });
+  }
+
+  render() {
+    return (
+      <div className={styles.landingContainer} ref={this.myRef}>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={LandingEntries} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/blog" component={Blog} />
+        </Switch>
+        <div className={styles.footerContainer}>
+          <span className={styles.copyright}>Copyright, Harper Grey Lifestyles Inc. 2018 &copy;</span>
+        </div>
+      </div>
+    );
+  }
+}
 // Landing.propTypes = {
 // };
 
