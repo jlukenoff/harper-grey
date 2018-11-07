@@ -1,6 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav/Nav';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import Shop from '../Shop/Shop';
+import Blog from '../Blog/Blog';
 // import PropTypes from 'prop-types';
 
 import styles from './Landing.css';
@@ -67,6 +71,10 @@ const Landing = ({ match }) => (
     <Nav />
     <Switch>
       <Route exact path="/" component={LandingEntries} />
+      <Route path="/about/" component={About} />
+      <Route path="/contact/" component={Contact} />
+      <Route path="/shop/" component={Shop} />
+      <Route path="/blog/" component={Blog} />
     </Switch>
     <div className={styles.footerContainer}>
       <span className={styles.copyright}>Copyright, Harper Grey Lifestyles Inc. 2018 &copy;</span>

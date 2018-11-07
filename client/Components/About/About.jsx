@@ -4,7 +4,7 @@ import React from 'react';
 // import styles from './About.css';
 
 const About = props => (
-	<div>About Here</div>
+  <div>About Here</div>
 );
 
 // About.propTypes = {
