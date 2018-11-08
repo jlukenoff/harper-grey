@@ -1,10 +1,10 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-// import styles from './Contact.css';
+import styles from './Contact.css';
 
 const Contact = props => (
-  <div>Contact Here</div>
+  <div className={styles.container}>Contact Here</div>
 );
 
 // Contact.propTypes = {
