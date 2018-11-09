@@ -86,7 +86,7 @@ class Landing extends Component {
   render() {
     return (
       <div className={styles.landingContainer} ref={this.myRef}>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={LandingEntries} />
           <Route path="/about" component={About} />

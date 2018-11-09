@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Landing from '../Landing/Landing';
+import Nav from '../Nav/Nav';
 
 // import PropTypes from 'prop-types';
 
@@ -10,8 +11,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showNav: false,
       ...props,
     };
+
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  toggleNav() {
+    const { showNav } = this.state;
+    this.setState({ showNav: !showNav });
   }
 
   render() {
@@ -20,9 +29,7 @@ class App extends Component {
         <div className={styles.background}>
           <div className={styles.gradient}>
             <div className={styles.rootContainer}>
-              <Link to="/" className={styles.title}>Harper Grey</Link>
-              <br />
-              <span className={styles.subTitle}>Lifestyle</span>
+              <Nav {...this.state} toggleNav={this.toggleNav} />
               <Route component={Landing} />
             </div>
           </div>
