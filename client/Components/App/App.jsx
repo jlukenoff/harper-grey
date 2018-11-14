@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Landing from '../Landing/Landing';
 import Nav from '../Nav/Nav';
 
@@ -25,16 +25,14 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className={styles.background}>
-          <div className={styles.gradient}>
-            <div className={styles.rootContainer}>
-              <Nav {...this.state} toggleNav={this.toggleNav} />
-              <Route component={Landing} />
-            </div>
+      <div className={styles.background}>
+        <div className={styles.gradient}>
+          <div className={styles.rootContainer}>
+            <Nav {...this.state} toggleNav={this.toggleNav} />
+            <Route component={Landing} />
           </div>
         </div>
-      </Router>
+      </div>
     );
   }
 }

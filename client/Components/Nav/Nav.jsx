@@ -5,7 +5,6 @@ import MenuIcon from '../img/menuIcon.svg';
 
 import styles from './Nav.css';
 
-
 const Nav = ({ showNav, toggleNav }) => (
   <div className={styles.container}>
     <span className={styles.title}>Harper Grey</span>
@@ -13,10 +12,18 @@ const Nav = ({ showNav, toggleNav }) => (
     <div className={styles.dropdown}>
       <MenuIcon className={styles.dropbtn} />
       <div className={styles['dropdown-content']}>
-        <Link to="/about" className={styles.link}>About</Link>
-        <Link to="/contact" className={styles.link}>Contact</Link>
-        <Link to="/shop" className={styles.link}>Shop</Link>
-        <Link to="/blog" className={styles.link}>Blog</Link>
+        <Link to="/about" className={styles.link}>
+          About
+        </Link>
+        <Link to="/contact" className={styles.link}>
+          Contact
+        </Link>
+        <Link to="/shop" className={styles.link}>
+          Shop
+        </Link>
+        <Link to="/blog" className={styles.link}>
+          Blog
+        </Link>
       </div>
     </div>
   </div>

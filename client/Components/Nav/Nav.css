@@ -14,7 +14,8 @@
   width: 50px;
 }
 
-.link, .dropbtn {
+.link,
+.dropbtn {
   display: inline-block;
   text-align: center;
   padding: 8px 16px;
@@ -23,7 +24,7 @@
 
 .dropbtn {
   fill: black;
-  width: 50%
+  width: 50%;
 }
 
 li.dropdown {
@@ -35,7 +36,7 @@ li.dropdown {
   position: absolute;
   background-color: white;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
@@ -51,7 +52,8 @@ li.dropdown {
   background-color: rgb(237, 237, 237);
 }
 
-.dropdown:hover .dropdown-content, .dropbtn:hover + .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropbtn:hover + .dropdown-content {
   display: block;
 }
 

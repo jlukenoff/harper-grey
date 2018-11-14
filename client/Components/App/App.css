@@ -29,20 +29,3 @@
   text-align: center;
   display: block;
 }
-
-.title {
-  font-size: 12vw;
-  font-family: 'Sacramento', 'Lobster';
-  font-weight: thin;
-  color: white;
-  letter-spacing: 2px;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.subTitle {
-  font-size: 6vw;
-  font-family: 'Raleway Dots', sans-serif;
-  display: inline-block;
-  color: white;
-}
