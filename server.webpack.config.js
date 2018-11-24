@@ -1,17 +1,19 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const nodeExternals = require('webpack-node-externals');
 
-const ENTRY_POINT = path.resolve(__dirname, 'client/index.jsx');
+const ENTRY_POINT = path.resolve(__dirname, 'server/index.jsx');
 
 const OUTPUT_DIR = path.resolve(__dirname, 'public');
 
 module.exports = {
   entry: ENTRY_POINT,
   output: {
-    filename: 'bundle.js',
+    filename: 'server.js',
     path: OUTPUT_DIR,
     publicPath: '/',
   },
+  target: 'node',
+  externals: nodeExternals(),
   devtool: 'source-map',
   mode: 'development',
   resolve: { extensions: ['.js', '.jsx', '.css'] },
@@ -46,29 +48,6 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              sourceMap: true,
-              importLoaders: 1,
-              localIdentName: '[name]--[local]--[hash:base64:8]',
-            },
-          },
-        ],
-      },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: 'main.css',
-      chunkFilename: 'main.css',
-    }),
-  ],
 };

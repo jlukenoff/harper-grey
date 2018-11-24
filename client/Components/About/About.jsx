@@ -1,11 +1,12 @@
 import React from 'react';
+import styled from 'react-emotion';
 // import PropTypes from 'prop-types';
 
-import styles from './About.css';
+const Container = styled.div`
+  height: 1500px;
+`;
 
-const About = props => (
-  <div className={styles.container}>About Here</div>
-);
+const About = props => <Container>About Here</Container>;
 
 // About.propTypes = {
 // };
