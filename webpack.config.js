@@ -20,6 +20,7 @@ module.exports = {
     compress: true,
     port: 8080,
   },
+  optimization: { minimize: true },
   module: {
     rules: [
       {

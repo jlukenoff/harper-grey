@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import styled, { injectGlobal } from 'react-emotion';
 import Landing from '../Landing/Landing';
 import Nav from '../Nav/Nav';
+import TempLanding from '../TempLanding/TempLanding';
 
 // import PropTypes from 'prop-types';
 
 // import styles from './App.css';
 
-injectGlobal(
-  '@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive|Prata|Raleway+Dots|Sacramento");'
-);
+injectGlobal(`
+@import url("https://fonts.googleapis.com/css?family=Cedarville+Cursive|Prata|Raleway+Dots|Sacramento");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+`);
 
 const Background = styled('div')`
   background-image: url(https://images.unsplash.com/photo-1509392949348-24e77e5e902d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=397da56000441e02b4cde660a10e764f&auto=format&fit=crop&w=1500&q=80);
@@ -63,7 +65,10 @@ class App extends Component {
         <Gradient>
           <Container>
             <Nav {...this.state} toggleNav={this.toggleNav} />
-            <Route component={Landing} />
+            <Switch>
+              <Route path="/" exact component={TempLanding} />
+              <Route component={Landing} />
+            </Switch>
           </Container>
         </Gradient>
       </Background>

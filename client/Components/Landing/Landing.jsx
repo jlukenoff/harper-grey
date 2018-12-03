@@ -1,10 +1,11 @@
 import React, { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Shop from '../Shop/Shop';
 import Blog from '../Blog/Blog';
-import styled from 'react-emotion';
+import TempLanding from '../TempLanding/TempLanding';
 import {
   Container,
   Footer,
@@ -14,7 +15,6 @@ import {
   EntryTitle,
   Image,
 } from './LandingStyles';
-// import PropTypes from 'prop-types';
 
 const content = [
   {
@@ -52,44 +52,38 @@ const content = [
   },
 ];
 
-function LandingEntries() {
-  return content.map(({ imageUrl, title, text }, index) =>
-    index % 2 === 0 ? (
+const LandingEntries = () =>
+  content.map((img, index) => {
+    const { imageUrl, title, text } = img;
+    const isEven = index % 2 === 0;
+    return (
       <ContentEntry key={title}>
-        <Image
-          src={imageUrl}
-          alt={title}
-          isBlock={typeof text === 'undefined'}
-          isEven
-        />
+        {isEven && (
+          <Image
+            src={imageUrl}
+            alt={title}
+            isBlock={typeof text === 'undefined'}
+            isEven
+          />
+        )}
         {text && (
-          <Text isEven>
+          <Text isEven={isEven}>
             <EntryTitle>{title}</EntryTitle>
             {text.split('\n').map(line => (
               <TextContent key={line}>{line}</TextContent>
             ))}
           </Text>
         )}
-      </ContentEntry>
-    ) : (
-      <ContentEntry key={title}>
-        {text && (
-          <Text>
-            <EntryTitle>{title}</EntryTitle>
-            {text.split('\n').map(line => (
-              <TextContent key={line}>{line}</TextContent>
-            ))}
-          </Text>
+        {!isEven && (
+          <Image
+            src={imageUrl}
+            alt={title}
+            isBlock={typeof text === 'undefined'}
+          />
         )}
-        <Image
-          src={imageUrl}
-          alt={title}
-          isBlock={typeof text === 'undefined'}
-        />
       </ContentEntry>
-    )
-  );
-}
+    );
+  });
 
 class Landing extends Component {
   constructor(props) {
@@ -141,7 +135,9 @@ class Landing extends Component {
     );
   }
 }
-// Landing.propTypes = {
-// };
+
+Landing.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
 export default Landing;

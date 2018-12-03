@@ -13,6 +13,7 @@ const Container = styled('div')`
   left: 0;
   width: 100%;
   z-index: 1;
+  box-shadow: 0px 2px 10px #2e2d2d;
 `;
 
 const Title = styled(Link)`
