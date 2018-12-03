@@ -11,9 +11,9 @@ const app = express();
 
 app.use(express.static(path.resolve('./public')));
 
-// app.get('/bundle.js', (req, res) => {
-//   res.sendFile(path.resolve('./public/bundle.js'));
-// });
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.resolve('./public/bundle.js'));
+});
 
 app.get('/*', (req, res) => {
   const context = {};
@@ -47,7 +47,9 @@ app.get('/*', (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-const server = app.listen(port, () => console.log(`Server running on port ${port}`));
+const server = app.listen(port, () =>
+  console.log(`Server running on port ${port}`)
+);
 
 if (process.env.NODE_ENV === 'test') server.close();
 
