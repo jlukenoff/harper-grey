@@ -11,7 +11,7 @@
     "build": "webpack --config server.webpack.config.js -p",
     "build:dev": "webpack --config server.webpack.config.js -w",
     "build:client": "webpack -p",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build && npm run build:client"
   },
   "jest": {
     "verbose": true,
