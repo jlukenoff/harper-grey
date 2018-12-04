@@ -29,7 +29,7 @@ const SubTitle = styled.div`
   font-family: 'Roboto';
 `;
 
-const TempLanding = props => (
+const TempLanding = () => (
   <Container>
     <CopyContainer>
       <MainTitle>Coming Soon...</MainTitle>
