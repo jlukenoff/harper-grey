@@ -11,10 +11,6 @@ const app = express();
 
 app.use(express.static(path.resolve('./public')));
 
-// // app.get('/bundle.js', (req, res) => {
-//   res.sendFile(path.resolve('../public/bundle.js'));
-// });
-
 app.get('/', (req, res) => {
   const context = {};
   const markup = renderStylesToString(
