@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled, { injectGlobal } from 'react-emotion';
 import Landing from '../Landing/Landing';
-import Nav from '../Nav/Nav';
+import Header from '../Header/Header';
 import TempLanding from '../TempLanding/TempLanding';
 
 // import PropTypes from 'prop-types';
@@ -64,7 +64,7 @@ class App extends Component {
       <Background>
         <Gradient>
           <Container>
-            <Nav {...this.state} toggleNav={this.toggleNav} />
+            <Header {...this.state} toggleNav={this.toggleNav} />
             <Switch>
               <Route path="/" exact component={TempLanding} />
               <Route component={Landing} />

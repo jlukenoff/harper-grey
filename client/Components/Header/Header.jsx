@@ -80,7 +80,7 @@ const StyledMenuIcon = styled(MenuIcon)`
   }
 `;
 
-const Nav = props => (
+const Header = () => (
   <Container>
     <Title to="/">Harper Grey</Title>
     <SubTitle>Lifestyle</SubTitle>
@@ -96,7 +96,7 @@ const Nav = props => (
   </Container>
 );
 
-// Nav.propTypes = {
+// Header.propTypes = {
 // };
 
-export default Nav;
+export default Header;

@@ -12,4 +12,6 @@ hydrate(
   document.getElementById('app')
 );
 
+console.log('client rendered');
+
 export default App;
