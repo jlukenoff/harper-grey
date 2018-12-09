@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
+const MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://127.0.0.1/harper-grey';
+
 const connection = mongoose.connect(
-  'mongodb://127.0.0.1/harper-grey',
+  MONGODB_URI,
   { useNewUrlParser: true }
 );
 
