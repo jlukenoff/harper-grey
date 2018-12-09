@@ -11,6 +11,7 @@
     "build": "webpack --config server.webpack.config.js -p",
     "build:dev": "webpack --config server.webpack.config.js -w",
     "build:client": "webpack -p",
+    "build:client:dev": "webpack -w",
     "heroku-postbuild": "npm run build && npm run build:client"
   },
   "jest": {
@@ -37,6 +38,8 @@
   },
   "homepage": "https://github.com/jlukenoff/harper-grey#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "express": "^4.16.3",

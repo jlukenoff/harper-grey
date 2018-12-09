@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import styled, { injectGlobal } from 'react-emotion';
+import axios from 'axios';
 import About from '../About/About';
 import Header from '../Header/Header';
 import Contact from '../Contact/Contact';
@@ -32,12 +33,18 @@ const Gradient = styled.div`
 `;
 
 const Container = styled.div`
-  height: 1500px;
   padding: 20vh 300px;
   color: #fff;
   font-size: 1.5em;
   line-height: 1.5em;
   text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      padding: 15vh 8%;
+      font-size: 1em;
+    }
+  }
 `;
 
 const Hrule = styled.hr`
@@ -57,7 +64,7 @@ class App extends Component {
 
     this.toggleNav = this.toggleNav.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleNav() {
@@ -75,14 +82,24 @@ class App extends Component {
       userContactInfo.city = e.target.value;
     } else if (type === 'AGE') {
       userContactInfo.ageRange = e.target.value;
+    } else if (type === 'MESSAGE' && e.which === 13) {
+      this.handleSubmit();
     } else if (type === 'MESSAGE') {
       userContactInfo.message = e.target.value;
     }
     this.setState({ userContactInfo });
   }
 
-  handleSelect() {
-    console.log(JSON.stringify(this.state.userContactInfo, null, 2));
+  handleSubmit() {
+    const { userContactInfo } = this.state;
+    console.log(JSON.stringify(userContactInfo));
+    axios
+      .post('/api/contact', userContactInfo)
+      .then(res => {
+        console.log(res);
+        this.setState({ userContactInfo: {} });
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
@@ -95,7 +112,7 @@ class App extends Component {
             <Hrule align="center" width="50%" />
             <Contact
               handleInputChange={this.handleInputChange}
-              handleSelect={this.handleSelect}
+              handleSubmit={this.handleSubmit}
             />
           </Container>
         </Gradient>

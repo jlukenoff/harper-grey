@@ -20,6 +20,7 @@ const ContactInput = styled.input`
   line-height: 1.5em;
   margin: 10px 0;
   font-size: 0.6em;
+  max-width: 80%;
 
   &:after {
     content: ' *';
@@ -35,6 +36,7 @@ const SubmitButton = styled.button`
   font-size: inherit;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 const TextArea = ContactInput.withComponent('textarea');
@@ -76,7 +78,7 @@ const Contact = ({ handleInputChange, handleSubmit }) => (
     <TextArea
       rows="10"
       cols="50"
-      placeholder=""
+      placeholder="Write us a message..."
       onChange={e => handleInputChange(e, 'MESSAGE')}
       required
     />
