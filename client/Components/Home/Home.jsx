@@ -1,20 +1,64 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
+import styled from 'react-emotion';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Shop from '../Shop/Shop';
 import Blog from '../Blog/Blog';
-import TempLanding from '../TempLanding/TempLanding';
-import {
-  Container,
-  Footer,
-  ContentEntry,
-  Text,
-  TextContent,
-  EntryTitle,
-  Image,
-} from './LandingStyles';
+// import TempLanding from '../TempLanding/TempLanding';
+
+const Container = styled.div`
+  background-color: transparent;
+`;
+
+const Footer = styled.div`
+  display: inline-block;
+  width: 100%;
+  height: 10vh;
+  margin-top: 4vh;
+  bottom: 0;
+`;
+
+const ContentEntry = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  padding: 0 2%;
+`;
+
+const Image = styled.img(({ isBlock, isEven }) => {
+  if (!isBlock) {
+    return {
+      display: 'block',
+      height: '10%',
+      width: 'auto',
+      boxShadow: '0px 2px 10px black',
+      [`${isEven ? 'marginRight' : 'marginLeft'}`]: '4%',
+    };
+  }
+  return { width: '100%', height: 'auto' };
+});
+
+const Text = styled.div`
+  display: inline-block;
+  font-size: 1.4em;
+  text-align: ${({ isEven }) => (isEven ? 'right' : 'left')};
+`;
+
+const EntryTitle = styled.span`
+  font-weight: 700;
+  font-size: 2em;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+`;
+
+const TextContent = styled.span`
+  display: inline-block;
+  margin: 5% 0;
+  line-height: 1.6em;
+`;
 
 const content = [
   {
@@ -52,7 +96,7 @@ const content = [
   },
 ];
 
-const LandingEntries = () =>
+const Entries = () =>
   content.map((img, index) => {
     const { imageUrl, title, text } = img;
     const isEven = index % 2 === 0;
@@ -85,7 +129,7 @@ const LandingEntries = () =>
     );
   });
 
-class Landing extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.scrollTop = this.scrollTop.bind(this);
@@ -122,7 +166,7 @@ class Landing extends Component {
     return (
       <Container ref={this.myRef}>
         <Switch>
-          <Route exact path="/" component={LandingEntries} />
+          <Route exact path="/" component={Entries} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/shop" component={Shop} />
@@ -136,8 +180,8 @@ class Landing extends Component {
   }
 }
 
-Landing.propTypes = {
+Home.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-export default Landing;
+export default Home;
