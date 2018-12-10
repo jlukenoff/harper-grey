@@ -18,7 +18,15 @@ const ContactSchema = new mongoose.Schema({
   created: { type: Date, default: Date.now },
 });
 
+const UserSchema = new mongoose.Schema({
+  _id: Number,
+  username: String,
+  password: String,
+  created: { type: Date, default: Date.now },
+});
+
 module.exports = {
   Contact: mongoose.model('Contact', ContactSchema),
+  User: mongoose.model('User', UserSchema),
   connection,
 };

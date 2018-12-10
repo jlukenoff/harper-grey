@@ -6,12 +6,12 @@
   "scripts": {
     "start": "node public/server.js",
     "test": "jest",
-    "start:dev": "nodemon public/server.js",
-    "client:dev": "webpack-dev-server",
+    "dev:start": "nodemon --inspect public/server.js",
+    "dev:client-only": "webpack-dev-server",
     "build": "webpack --config server.webpack.config.js -p",
-    "build:dev": "webpack --config server.webpack.config.js -w",
+    "dev:build": "webpack --config server.webpack.config.js -w",
     "build:client": "webpack -p",
-    "build:client:dev": "webpack -w",
+    "dev:client": "webpack -w",
     "heroku-postbuild": "npm run build && npm run build:client"
   },
   "jest": {
