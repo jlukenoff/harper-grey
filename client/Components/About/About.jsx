@@ -27,6 +27,21 @@ const Span = styled.div`
   padding-left: 150px;
 `;
 
+const BlogButton = styled.a`
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  width: 224px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 50px;
+
+  &:hover {
+    background-color: #f2bbd3;
+  }
+`;
+
 const About = () => (
   <Fragment>
     <TitleContainer>
@@ -49,6 +64,12 @@ const About = () => (
       <br />
       <Span> - Bo Derek </Span>
     </Quote>
+    <BlogButton
+      href="https://harpergreylifestyle.wordpress.com/"
+      target="_blank"
+    >
+      Check out our blog!
+    </BlogButton>
   </Fragment>
 );
 

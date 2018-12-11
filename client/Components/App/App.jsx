@@ -5,6 +5,7 @@ import axios from 'axios';
 import About from '../About/About';
 import Header from '../Header/Header';
 import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
 // import PropTypes from 'prop-types';
 
@@ -33,7 +34,7 @@ const Gradient = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 20vh 300px;
+  padding: 20vh 250px 255px 250px;
   color: #fff;
   font-size: 1.5em;
   line-height: 1.5em;
@@ -47,7 +48,7 @@ const Container = styled.div`
   }
 `;
 
-const Hrule = styled.hr`
+const Hr = styled.hr`
   border-color: #fff;
   margin-top: 100px;
   margin-left: 25%;
@@ -109,11 +110,12 @@ class App extends Component {
           <Header />
           <Container>
             <About />
-            <Hrule align="center" width="50%" />
+            <Hr align="center" width="50%" />
             <Contact
               handleInputChange={this.handleInputChange}
               handleSubmit={this.handleSubmit}
             />
+            <Footer />
           </Container>
         </Gradient>
       </Route>

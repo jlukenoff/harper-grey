@@ -20,6 +20,9 @@ module.exports = {
     compress: true,
     port: 8080,
   },
+  watchOptions: {
+    poll: 1000,
+  },
   optimization: { minimize: true },
   module: {
     rules: [

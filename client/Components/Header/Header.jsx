@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'react-emotion';
 // import MenuIcon from '../img/menuIcon.svg';
 // import PropTypes from 'prop-types';
@@ -18,9 +18,18 @@ const Container = styled.div`
 const Logo = styled.img`
   margin-bottom: 5px;
 `;
+const LogoIcon = styled.img`
+  position: fixed;
+  top: 7px;
+  left: 10px;
+`;
 
 const Header = () => (
   <Container>
+    <LogoIcon
+      src="https://s3-us-west-1.amazonaws.com/harper-grey-assets/logo_image.png"
+      alt="icon"
+    />
     <Logo
       src="https://s3-us-west-1.amazonaws.com/harper-grey-assets/harper_grey_logo.png"
       alt="Harper Grey Lifestyle"

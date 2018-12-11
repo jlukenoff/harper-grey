@@ -5,7 +5,8 @@ import parser from 'body-parser';
 import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 import { StaticRouter } from 'react-router';
-import { Contact as ContactModel } from '../database';
+import passport from 'passport';
+import { Contact, User } from '../database';
 import App from '../client/Components/App/App';
 
 const app = express();
@@ -15,9 +16,13 @@ app.use(express.static(path.resolve('./public')));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 
+/* app.use(express.session({ secret: 'hannahjohn210' );
+app.use(passport.initialize());
+app.use(passport.session()); */
+
 app.post('/api/contact', (req, res) => {
   const { name, city, message, email, ageRange } = req.body;
-  new ContactModel({
+  new Contact({
     _id: Date.now(),
     name,
     city,
