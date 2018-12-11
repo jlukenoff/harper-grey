@@ -10,10 +10,11 @@ const TitleContainer = styled.div`
 const Title = styled.span`
   font-weight: 500;
   font-size: 2.5em;
+  line-height: 1em;
 `;
 
 const Text = styled.p`
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.05em;
 `;
 const Quote = styled.div`
@@ -45,15 +46,13 @@ const BlogButton = styled.a`
 const About = () => (
   <Fragment>
     <TitleContainer>
-      <Title>Our mission statement</Title>
+      <Title>Hey there, thanks for stopping by!</Title>
     </TitleContainer>
     <Text>
       {
-        'Our designs were inspired by the struggles of the everyday woman. \
-        The average American woman is a size 14, so why is it so hard to \
-        find cute fit-wear for every size? Women of all ages are active - \
-        so why does the activewear industry focus only on twenty-somethings. \
-        Our clothes work for everyone- clothing to fit your body, your budget, and your lifestyle.'
+        'Harper Grey is a blogging and lifestyle brand that celebrates strong women, \
+        great fashion, and the pursuit of travel. We are working on some exciting things, \
+        but until then, check out the Blog, updated weekly!'
       }
     </Text>
     <Quote>

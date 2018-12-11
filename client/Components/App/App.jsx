@@ -30,7 +30,7 @@ body #app {
 `);
 
 const Gradient = styled.div`
-  background-color: rgb(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.35);
 `;
 
 const Container = styled.div`

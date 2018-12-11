@@ -34,9 +34,13 @@ const SubmitButton = styled.button`
   border: 1px solid black;
   font-family: inherit;
   font-size: inherit;
-  padding: 10px;
+  padding: 10px 40px;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f2bbd3;
+  }
 `;
 
 const TextArea = ContactInput.withComponent('textarea');

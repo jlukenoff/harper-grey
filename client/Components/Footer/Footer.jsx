@@ -39,6 +39,11 @@ const Twitter = styled(TwitterLogo)`
   }
 `;
 
+const Copyright = styled.span`
+  float: right;
+  margin-left: 40vw;
+`;
+
 // import styles from './Footer.css';
 const Container = styled.div`
   width: 100%;
@@ -51,11 +56,23 @@ const Container = styled.div`
   align-items: center;
   left: 0;
   font-size: 0.5em;
-`;
 
-const Copyright = styled.span`
-  float: right;
-  margin-left: 40vw;
+  @media screen and (max-width: 1024px) {
+    & {
+      margin-top: 20%;
+      width: 80%;
+      margin-left: 10%;
+      height: 15%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ${Copyright} {
+      float: none;
+      margin-left: 0;
+    }
+  }
 `;
 
 const SocialContainer = styled.div`

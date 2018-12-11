@@ -5,8 +5,8 @@ import parser from 'body-parser';
 import { renderToString } from 'react-dom/server';
 import { renderStylesToString } from 'emotion-server';
 import { StaticRouter } from 'react-router';
-import passport from 'passport';
-import { Contact, User } from '../database';
+// import passport from 'passport';
+import { Contact } from '../database';
 import App from '../client/Components/App/App';
 
 const app = express();
@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
           <head>
             <meta charset="utf-8" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>SSR app</title>
+            <title>Harper Grey</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
           </head>
           <body>
